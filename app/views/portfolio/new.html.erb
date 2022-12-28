@@ -1,0 +1,14 @@
+<h1>New Portfolio</h1>
+
+<%= form_with model: @portfolio do |form| %>
+
+  <div>
+    <%= form.label :curr %><br>
+    <%= form.text_field :curr %><br>
+
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

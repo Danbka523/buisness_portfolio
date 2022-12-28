@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_28_091808) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_28_161413) do
   create_table "currencies", force: :cascade do |t|
     t.integer "c_id"
     t.string "curr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.integer "t_id"
+    t.date "deal_date"
+    t.integer "count"
+    t.string "type_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,10 +36,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_28_091808) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tools", force: :cascade do |t|
+    t.integer "t_id"
+    t.integer "c_id"
+    t.integer "p_id"
+    t.integer "count"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer "u_id"
     t.string "name"
-    t.integer "port_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

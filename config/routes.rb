@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   post '/login', to: 'login#create'
   get '/logout', to: 'login#destroy'
 
+  get '/profile', to: 'profile#profile'
+  get '/portfolio/new', to: 'portfolio#new'
+  post '/portfolio/new', to: 'portfolio#create'
+
 end
