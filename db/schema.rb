@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_28_174936) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_28_182744) do
   create_table "currencies", force: :cascade do |t|
     t.integer "c_id"
     t.string "curr"
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_28_174936) do
     t.integer "currency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name_p"
   end
 
   create_table "tools", force: :cascade do |t|

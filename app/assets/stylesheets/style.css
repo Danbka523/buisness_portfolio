@@ -176,3 +176,12 @@ body {
 .social-login__icon:hover {
 	transform: scale(1.5);	
 }
+.center-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
+	font-size: 100px;
+  }
