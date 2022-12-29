@@ -6,8 +6,8 @@ class LoginController < ApplicationController
     def create
       user = User.find_by_email(user_params[:email])
       if user.present? && user.authenticate(user_params[:password])
-        session[:user_id] = user.id
-        redirect_to profile_path
+        session[:user_id] = user.u_id
+        redirect_to '/profile/profile'
       else
         flash[:error] = ['Invalid data']
         redirect_to login_path

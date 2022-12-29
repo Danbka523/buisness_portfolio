@@ -1,0 +1,22 @@
+<h1>There are your portfolios, <%= User.find_by(u_id:session[:user_id]).name %></h1>
+<table>
+    <thead>
+        <tr>
+            <th width ="35%" align="center">Name</th>
+            <th width ="20%" align="center">Currency</th>
+            <th colspan = "2" align="center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @portfolios.each do |portfolio| %>
+    <tr align="center">
+    <td width="35%"><%= portfolio.name_p %></td>
+    <td width ="20%"><%= @curr.find_by(c_id:portfolio.currency_id).curr%>
+    <td><%= link_to "Show", "/portfolio/tools"%></td>
+    <td><%= link_to "Destroy", "/portfolio/portfolios"%></td>
+    </tr>
+    <%end%>
+    </tbody>
+</table>
+<%= link_to 'Create new portfolio', '/portfolio/new' %><br>
+<p><%= link_to 'Go back to your profile','/profile/profile'%>

@@ -1,0 +1,28 @@
+<h1>New Tool</h1>
+
+<%= form_with model: @tool do |form| %>
+
+  <div>
+    <%= form.label :name,"Tool name" %><br>
+    <%= form.text_field :name %><br>
+  </div>
+
+  <div>
+    <%= form.label :curr,"Currency" %><br>
+    <%= form.text_field :curr %><br>
+  </div>
+
+   <div>   
+    <%= form.label :count,"Count" %><br>
+    <%= form.number_field :count %><br>
+  </div>
+
+  <div>
+    <%= form.label :price,"Price" %><br>
+    <%= form.number_field :price %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

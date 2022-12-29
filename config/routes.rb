@@ -9,9 +9,15 @@ Rails.application.routes.draw do
   post '/login', to: 'login#create'
   get '/logout', to: 'login#destroy'
 
-  get '/profile', to: 'profile#profile'
+  get '/profile/profile', to: 'profile#profile'
+  get '/profile/portfolios', to:'profile#portfolios'
+
+
   get '/portfolio/new', to: 'portfolio#new'
   post '/portfolio/new', to: 'portfolio#create'
-
+  get '/portfolio/tools', to: 'portfolio#tools'
   
+  get '/tool/new', to: 'tool#new'
+  post '/tool/new', to: 'tool#create'
+
 end

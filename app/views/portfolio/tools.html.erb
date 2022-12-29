@@ -1,0 +1,4 @@
+<h1>There are your tools for portfolio <%= Portfolio.find_by(user_id:session[:user_id]).name_p%></h1>
+
+
+<%=link_to "Create tool", "/tool/new"%>

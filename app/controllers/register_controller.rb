@@ -6,14 +6,14 @@ class RegisterController < ApplicationController
 
  def create
     
-        user = User.new(user_params)
+      user = User.new(user_params)
         
     if user.save
       user.u_id = user.id
       user.save
       session[:user_id] = user.id
       
-      redirect_to profile_path
+      redirect_to '/profile/profile'
     else
       flash[:error] = user.errors.full_messages
       redirect_to register_path

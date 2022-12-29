@@ -1,3 +1,4 @@
-<h1>Your profile</h1>
+<h1>Welcome, <%= User.find_by(u_id:session[:user_id]).name %>!</h1>
 
-<%= link_to 'Create new portfolio', '/portfolio/new' %>
+
+<p><%= link_to 'Show your portfolios', '/profile/portfolios'%></p>
