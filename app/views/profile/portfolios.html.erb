@@ -8,12 +8,13 @@
         </tr>
     </thead>
     <tbody>
-    <% @portfolios.each do |portfolio| %>
+    <% for @portfolio in @portfolios %>
     <tr align="center">
-    <td width="35%"><%= portfolio.name_p %></td>
-    <td width ="20%"><%= @curr.find_by(c_id:portfolio.currency_id).curr%>
-    <td><%= link_to "Show", "/portfolio/tools"%></td>
-    <td><%= link_to "Destroy", "/portfolio/portfolios"%></td>
+    
+        <td width="35%"><%= @portfolio.name_p %></td>
+        <td width ="20%"><%= @curr.find_by(c_id:@portfolio.currency_id).curr%>
+        <td><%=link_to "Show", "/portfolio/tools"%></td>
+        <td><%= link_to "Destroy", "/portfolio/portfolios", post, method: :delete%></td>
     </tr>
     <%end%>
     </tbody>

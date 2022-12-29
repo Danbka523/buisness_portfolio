@@ -7,17 +7,22 @@ class PortfolioController<ApplicationController
     def create
         @portfolio = Portfolio.new()
         @portfolio.user_id = session[:user_id]
-        @portfolio.currency_id = Currency.find_by(curr: params[:curr]).c_id    
+        @portfolio.currency_id = Currency.find_by(curr: params[:curr]).c_id
+                
         @portfolio.name_p = params[:name_p]
         if (@portfolio.save)
             @portfolio.p_id = @portfolio.id
             @portfolio.save
             redirect_to '/profile/portfolios'
         end
+       
+    end
+
+    def destroy
+
     end
 
     def tools
-        curr_port = Portfolio.find_by(user_id:session[:user_id])
-        @tools = Tool.where(p_id:curr_port.p_id)
+        p @portfolio
     end
 end
