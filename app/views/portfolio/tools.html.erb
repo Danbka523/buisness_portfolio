@@ -1,21 +1,27 @@
-<h1>There are your tools for portfolio <%= Portfolio.find_by(user_id:session[:user_id]).name_p%></h1>
+<h1>There are your tools for portfolio <%=@portfolio.name_p%></h1>
 <table>
     <thead>
         <tr>
             <th width ="35%" align="center">Name</th>
             <th width ="20%" align="center">Currency</th>
-            <th colspan = "2" align="center">Actions</th>
+            <th width ="20%" align="center">Count</th>
+            <th width ="20%" align="center">Price</th>
         </tr>
     </thead>
-    <tbody>
-    <% for @tool in Tool.where(p_id:session[:curr_port]) %>
+    <tbody
+    <% for @tool in Tool.where(p_id:@portfolio.p_id) %>
     <tr align="center">
     
         <td width="35%"><%= @tool.name %></td>
+        <td width ="20%"><%=Currency.find_by(c_id:@tool.c_id).curr%> </td>
+        <td width ="20%"><%=@tool.count%> </td>
+        <td width ="20%"><%=@tool.price%> </td>
+        
 
     </tr>
     <%end%>
+
     </tbody>
 </table>
-
-<%=link_to "Create tool", "/tool/new"%>
+<div>
+</div>

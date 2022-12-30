@@ -15,9 +15,12 @@ Rails.application.routes.draw do
 
   get '/portfolio/new', to: 'portfolio#new'
   post '/portfolio/new', to: 'portfolio#create'
-  get '/portfolio/tools', to: 'portfolio#tools'
+  get '/portfolio/tools/:id', to: 'portfolio#tools', as: 'portfolio'
+  
   
   get '/tool/new', to: 'tool#new'
   post '/tool/new', to: 'tool#create'
+
+  
 
 end
