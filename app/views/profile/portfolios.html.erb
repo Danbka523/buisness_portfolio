@@ -19,5 +19,7 @@
     </tbody>
 </table>
 <%= link_to 'Create new portfolio', '/portfolio/new' %><br>
-<p><%= link_to 'Create Tool','/tool/new'%>
+<% if  Portfolio.find_by(user_id:session[:user_id])!=nil%>
+<%= link_to 'Create Tool','/tool/new'%>
+<%end%>
 <p><%= link_to 'Go back to your profile','/profile/profile'%>

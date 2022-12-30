@@ -18,4 +18,9 @@ class ToolController<ApplicationController
             p "================="
         end
     end
+    def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destroy    
+    redirect_to '/profile/portfolios'
+    end
 end

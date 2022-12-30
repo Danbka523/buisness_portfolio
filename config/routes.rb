@@ -17,9 +17,10 @@ Rails.application.routes.draw do
   post '/portfolio/new', to: 'portfolio#create'
   get '/portfolio/tools/:id', to: 'portfolio#tools', as: 'portfolio'
   
-  
   get '/tool/new', to: 'tool#new'
   post '/tool/new', to: 'tool#create'
+  get '/tool/destroy/:id', to: 'tool#destroy', as: 'tool'
+  
 
   
 

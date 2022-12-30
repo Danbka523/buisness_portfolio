@@ -16,6 +16,7 @@
         <td width ="20%"><%=Currency.find_by(c_id:@tool.c_id).curr%> </td>
         <td width ="20%"><%=@tool.count%> </td>
         <td width ="20%"><%=@tool.price%> </td>
+        <td width ="20%"> <%=link_to 'Delete',tool_path(@tool)%> </td>
         
 
     </tr>
@@ -24,4 +25,5 @@
     </tbody>
 </table>
 <div>
+<%=link_to 'Back','/profile/portfolios' %>
 </div>
